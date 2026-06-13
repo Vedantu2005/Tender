@@ -31,11 +31,11 @@ export function TenderDetails() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       
       {/* Header Actions */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         <Link to="/explorer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>
           <ArrowLeft size={16} /> Back to Explorer
         </Link>
-        <div style={{ display: 'flex', gap: '1rem' }}>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <button className="btn btn-outline" disabled={loading}><Download size={16} /> Download PDF</button>
           <button className="btn btn-outline" disabled={loading}><Share2 size={16} /> Share</button>
           <button 
@@ -49,7 +49,7 @@ export function TenderDetails() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem' }}>
+      <div className="grid-details">
         
         {/* Left Column: Overview */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>

@@ -98,7 +98,7 @@ export function AIMatching() {
 
       <div>
         <h2 style={{ fontSize: '1.25rem', fontWeight: 600, margin: '0 0 1rem 0' }}>Top Recommended Tenders</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 350px), 1fr))', gap: '1.5rem' }}>
           {loading ? (
             Array.from({ length: 3 }).map((_, i) => (
               <Card key={i}>

@@ -114,13 +114,13 @@ export function Dashboard() {
             tenders?.filter(t => t.score > 80).slice(0, 3).map(rec => (
               <Card key={rec.id} style={{ borderLeft: '4px solid var(--color-accent)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '2rem', flexWrap: 'wrap' }}>
-                  <div style={{ flex: 1, minWidth: '300px' }}>
+                  <div style={{ flex: 1, minWidth: '200px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
                       <h3 style={{ fontSize: '1.125rem', fontWeight: 600, margin: 0 }}>{rec.title}</h3>
                       <Badge variant={rec.score >= 90 ? 'success' : 'warning'}>{rec.score}% Match</Badge>
                     </div>
                     
-                    <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.875rem', color: 'var(--color-text-muted)', marginBottom: '1rem' }}>
+                    <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.875rem', color: 'var(--color-text-muted)', marginBottom: '1rem', flexWrap: 'wrap' }}>
                       <span><strong>Category:</strong> {rec.category}</span>
                       <span><strong>Value:</strong> {rec.value}</span>
                       <span><strong>Deadline:</strong> {rec.closeDate}</span>

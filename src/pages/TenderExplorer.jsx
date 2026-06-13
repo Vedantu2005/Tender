@@ -28,7 +28,7 @@ export function TenderExplorer() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
           <h1 style={{ fontSize: '1.5rem', fontWeight: 600, margin: '0 0 0.25rem 0' }}>Tender Explorer</h1>
           <p style={{ color: 'var(--color-text-muted)', margin: 0, fontSize: '0.875rem' }}>Advanced search and filtering for all extracted tenders</p>

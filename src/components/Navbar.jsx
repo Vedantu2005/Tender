@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Search, Bell, Activity, ChevronDown, CheckCircle2, Moon, Sun, LogOut } from 'lucide-react';
+import { Search, Bell, Activity, ChevronDown, CheckCircle2, Moon, Sun, LogOut, Menu } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 
-export function Navbar() {
+export function Navbar({ toggleSidebar }) {
   const { isDark, toggleTheme } = useTheme();
   const { logout, user } = useAuth();
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -22,7 +22,10 @@ export function Navbar() {
       zIndex: 30,
       transition: 'background-color 0.3s ease, border-color 0.3s ease'
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', flex: 1, maxWidth: '500px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', flex: 1, maxWidth: '500px', gap: '1rem' }}>
+        <button className="show-mobile" onClick={toggleSidebar} style={{ color: 'var(--color-text-main)' }}>
+          <Menu size={24} />
+        </button>
         <div style={{
           display: 'flex',
           alignItems: 'center',

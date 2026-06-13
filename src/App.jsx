@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import { Sidebar } from './components/Sidebar';
 import { Navbar } from './components/Navbar';
@@ -20,11 +20,29 @@ import { UserManagement } from './pages/UserManagement';
 import { Settings } from './pages/Settings';
 
 function AppLayout() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
   return (
     <div className="app-container">
-      <Sidebar />
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+      
+      {isSidebarOpen && (
+        <div 
+          className="show-mobile"
+          onClick={() => setIsSidebarOpen(false)}
+          style={{
+            position: 'fixed',
+            top: 0, left: 0, right: 0, bottom: 0,
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            zIndex: 35,
+            backdropFilter: 'blur(2px)'
+          }}
+        />
+      )}
+
       <div className="main-content">
-        <Navbar />
+        <Navbar toggleSidebar={toggleSidebar} />
         <main className="page-content">
           <Outlet />
         </main>

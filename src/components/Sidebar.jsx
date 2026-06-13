@@ -27,11 +27,13 @@ const navItems = [
   { name: 'Settings', path: '/settings', icon: Settings },
 ];
 
-export function Sidebar() {
+export function Sidebar({ isOpen, onClose }) {
   const { user } = useAuth();
 
   return (
-    <aside style={{
+    <aside 
+      className={`sidebar-responsive ${isOpen ? 'open' : 'closed'}`}
+      style={{
       width: '250px',
       backgroundColor: 'var(--color-card)',
       borderRight: '1px solid var(--color-border)',
@@ -41,8 +43,7 @@ export function Sidebar() {
       height: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      zIndex: 40,
-      transition: 'background-color 0.3s ease, border-color 0.3s ease'
+      zIndex: 40
     }}>
       <div style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem', borderBottom: '1px solid var(--color-border)' }}>
         <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'linear-gradient(135deg, var(--color-secondary), var(--color-accent))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -60,6 +61,7 @@ export function Sidebar() {
             <li key={item.name} style={{ margin: '0.25rem 1rem' }}>
               <NavLink
                 to={item.path}
+                onClick={onClose}
                 style={({ isActive }) => ({
                   display: 'flex',
                   alignItems: 'center',

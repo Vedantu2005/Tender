@@ -49,10 +49,10 @@ export function Settings() {
         </div>
       </div>
 
-      <div style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start' }}>
+      <div className="flex-col-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'flex-start' }}>
         
         {/* Sidebar Navigation */}
-        <div style={{ width: '250px', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        <div className="w-full-mobile" style={{ width: '250px', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           {tabs.map(tab => (
             <button
               key={tab.id}

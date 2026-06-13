@@ -51,7 +51,7 @@ export function KeywordIntelligence() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem' }}>
+      <div className="grid-details">
         
         {/* Left Column: Keyword Management */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>

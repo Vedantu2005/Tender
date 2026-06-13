@@ -122,6 +122,52 @@ input, select {
   .grid-cols-4, .grid-cols-3, .grid-cols-2 { grid-template-columns: 1fr; }
 }
 
+.show-mobile {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .show-mobile {
+    display: flex !important; /* using flex default or block */
+  }
+  span.show-mobile, i.show-mobile, svg.show-mobile {
+    display: inline-flex !important;
+  }
+  .flex-col-mobile {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .sidebar-responsive.closed {
+    transform: translateX(-100%) !important;
+  }
+  .sidebar-responsive.open {
+    transform: translateX(0) !important;
+  }
+  .w-full-mobile {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.grid-details {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .grid-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar-responsive {
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease !important;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -216,6 +262,12 @@ input, select {
   padding: 2rem;
   flex: 1;
   overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 1rem;
+  }
 }
 
 /* Scrollbar styling */
